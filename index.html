@@ -26,7 +26,7 @@
                     <div class="well well-sm">
                         <div class="row">
                             <div class="col-sm-6">
-                                <img ng-src="{{player.img}}" class="img-rounded img-responsive">
+                                <img ng-src="{{player.img}}" class="img-rounded img-responsive well-image">
                             </div>
                             <div class="col-sm-6">
                                 <h4>{{player.firstName}} {{player.lastName}} </h4>
@@ -34,16 +34,38 @@
                                 <p><strong>Birth Place:</strong> {{player.birthplace}}</p>
                                 <p><strong>Position:</strong> {{player.position}}</p>
                                 <p><strong>Bio :</strong> <small>{{player.bio}}</small></p>
-                                <button class="pull-right btn btn-primary">Learn More</button>
+                                <button class="pull-right btn btn-primary" data-toggle="modal" data-target="#player-info" ng-click="list.changeActivePlayer(player)">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="player-info">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header text-center">
+                            <h2>{{list.activePlayer.firstName}} {{list.activePlayer.lastName}}</h2>
+                            <button class="btn btn-danger pull-right" data-dismiss="modal">Close</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <img ng-src="{{list.activePlayer.imgAlt}}" class="img-rounded img-responsive">
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="col-md-8 col-md-offset-2">
+                                    <h3>Wikipedia Article</h3>
+                                    <p>{{list.activePlayer.extendedBio}}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
-
     <!-- THIRD PARTY SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
