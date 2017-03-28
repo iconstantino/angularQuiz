@@ -10,6 +10,7 @@
             vm.data = playersData;
             vm.activePlayer = {};
             vm.changeActivePlayer = changeActivePlayer;
+            vm.search = "";
 
             function changeActivePlayer(index){
                 vm.activePlayer = index;
