@@ -3,17 +3,24 @@
         .module('manchesterFacts')
         .controller('listCtrl', ListController);
 
+        ListController.$inject = ['quizMetrics'];
 
-        function ListController(){
+        function ListController(quizMetrics){
             var vm = this;
 
+            vm.quizMetrics = quizMetrics;
             vm.data = playersData;
             vm.activePlayer = {};
             vm.changeActivePlayer = changeActivePlayer;
+            vm.activateQuiz = activateQuiz;
             vm.search = "";
 
             function changeActivePlayer(index){
                 vm.activePlayer = index;
+            }
+
+            function activateQuiz(){
+                quizMetrics.changeState(true);
             }
         }
 
