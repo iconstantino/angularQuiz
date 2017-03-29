@@ -3,11 +3,13 @@
         .module('manchesterFacts')
         .controller('quizCtrl', QuizController);
 
+        QuizController.$inject = ['quizMetrics', 'DataService'];
 
-        function QuizController(){
+        function QuizController(quizMetrics, DataService){
             var vm = this;
 
-
+            vm.quizMetrics = quizMetrics;
+            vm.dataService = DataService;
             
         };
 })();
