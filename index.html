@@ -112,8 +112,8 @@
                     Error you have not answered all of the questions
                     <button class="close" ng-click="quiz.error = false">&times;</button>
                 </div>
-                <h3 ng-hide="quiz.finalise">Question</h3>
-                <div class="well well-sm" ng-hide="quiz.finalise">
+                <h3 ng-hide="quiz.finalize">Question</h3>
+                <div class="well well-sm" ng-hide="quiz.finalize">
                     <div class="row">
                         <div class="col-xs-12">
                             <h4>{{quiz.activeQuestion+1 + ". " + quiz.dataService.quizQuestions[quiz.activeQuestion].text}}</h4>
@@ -133,11 +133,11 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-warning pull-right" ng-click="quiz.questionAnswered()" ng-hide="quiz.finalise">Continue</button>
-                <div class="well well-sm class="col-xs-12"" ng-show="quiz.finalise">
+                <button class="btn btn-warning pull-right" ng-click="quiz.questionAnswered()" ng-hide="quiz.finalize">Continue</button>
+                <div class="well well-sm class="col-xs-12"" ng-show="quiz.finalize">
                         <h3>Are you sure you want to submit your answers?</h3>
-                        <button class="btn btn-succes" ng-click="quiz.finaliseAnswers()">Yes</button>
-                        <button class="btn btn-danger" ng-click="quiz.finalise = false">No</button>
+                        <button class="btn btn-succes" ng-click="quiz.finalizeAnswers()">Yes</button>
+                        <button class="btn btn-danger" ng-click="quiz.finalize = false">No</button>
                 </div>
             </div> <!-- END QUESTIONS -->
         </div><!-- END QUIZ CONTROLLER -->
@@ -186,7 +186,7 @@
                     <button class="close" ng-click="quiz.error = false">&times;</button>
                 </div>
                 <h3>Question</h3>
-                <div class="well well-sm" ng-hide="quiz.finalise">
+                <div class="well well-sm" ng-hide="quiz.finalize">
                     <div class="row">
                         <div class="col-xs-12">
                             <h4>{{results.activeQuestion+1 + ". " + results.dataService.quizQuestions[results.activeQuestion].text}}</h4>

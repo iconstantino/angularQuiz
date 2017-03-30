@@ -1,3 +1,5 @@
+//Simulating API Call, returns JSON
+
 (function(){
     angular
         .module('manchesterFacts')
@@ -6,11 +8,14 @@
         function DataFactory(){
             var dataObj = {
                 playersData: playersData,
-                quizQuestions: quizQuestions
+                quizQuestions: quizQuestions,
+                correctAnswers: correctAnswers
             };
 
             return dataObj;
-        };
+        }
+
+        var correctAnswers = [1, 2, 0, 0];
 
         var quizQuestions = [
             {
@@ -54,8 +59,28 @@
                 correct: null
             },
             {
+                type: 'image',
+                text: 'Which of these is our goalkeeper?',
+                possibilities: [
+                    {
+                        answer: 'https://www.thesun.co.uk/wp-content/uploads/2016/06/nintchdbpict000243473037-e1465643422477.jpg?w=960&strip=all'
+                    },
+                    {
+                        answer: 'http://i3.mirror.co.uk/incoming/article8055456.ece/ALTERNATES/s615b/PAY-Zlatan-Ibrahimovic-attends-a-presser-following-a-training-session.jpg'
+                    },
+                    {
+                        answer: 'http://abcnews.go.com/images/Sports/gty_paul_pogba_kb_140619.jpg'
+                    },
+                    {
+                        answer: 'http://i.dailymail.co.uk/i/pix/2012/08/07/article-2184918-146CFD8F000005DC-892_634x423.jpg'
+                    }
+                ],
+                selected: null,
+                correct: null
+            },
+            {
                 type: 'text',
-                text: 'Who is Manchester United\'s all time leading scorer??',
+                text: 'Who is Manchester United\'s all time leading scorer?',
                 possibilities: [
                     {
                         answer: 'Wayne Rooney'
@@ -107,7 +132,7 @@
                 bio: 'Wayne Rooney is Manchester United\'s all-time leading scorer and the only player to have scored 250 goals for the Reds, a milestone he reached when he broke Sir Bobby Charlton\'s long-standing record in January 2017.',
                 img: 'http://www.manutd.com/sitecore/shell/~/media/374AA068C74A419EBC844D25CDC93EB2.ashx?w=240&h=311&rgn=0,0,2000,2592',
                 imgAlt: 'http://e1.365dm.com/15/09/16-9/20/wayne-rooney-england-record_3348333.jpg?20150908215124',
-                extendedBio: 'Wayne Mark Rooney (/ˈruːni/; born 24 October 1985) is an English professional footballer who plays for and captains both Manchester United and the England national team. He has played much of his career as a forward, and he has also been used in various midfield roles. He is the highest goal scorer for Manchester United. <br><br> Aged nine, Rooney joined the youth team of Everton, for whom he made his professional debut in 2002 at the age of 16. He spent two seasons at the Merseyside club, before moving to Manchester United for £25.6 million in the 2004 summer transfer window. Since then, with Rooney in the team, United have won the Premier League five times, the UEFA Champions League once, the FIFA Club World Cup once, the FA Community Shield four times, the Football League Cup thrice and the FA Cup once. In September 2013, Rooney scored his 200th goal for Manchester United.[3] He is currently on 250 goals in all competitions which makes him the club\'s top goalscorer of all time. His 195 Premier League goals make him the competition\'s second top scorer of all time, behind Alan Shearer. Rooney holds the record for most goals for one club in the Premier League, with 180 for Manchester United. <br><br> Rooney made his senior international debut in February 2003 aged 17, becoming the youngest player to represent England (a record since broken by Theo Walcott) and he is England\'s youngest ever goalscorer.[4] He played at UEFA Euro 2004 and scored four goals, briefly becoming the youngest goalscorer in the history of the European Championship. Rooney has since featured at the 2006, 2010 and 2014 World Cups and is widely regarded as his country\'s best player.[5][6][7][8] He has won the England Player of the Year award four times, in 2008, 2009, 2014 and 2015. With 53 goals in 118 international caps, Rooney is England\'s all-time record goalscorer and second most-capped player, behind Peter Shilton. Along with David Beckham, Rooney is the most red carded player for England, having been sent off twice. <br><br> In 2009–10, Rooney was awarded the PFA Players\' Player of the Year and the FWA Footballer of the Year. He has won the Premier League Player of the Month award five times, a record only bettered by Steven Gerrard. He came fifth in the vote for the 2011 FIFA Ballon d\'Or and was named in the FIFPro World 11 for 2011. Rooney has won the Goal of the Season award by the BBC\'s Match of the Day poll on three occasions, with his bicycle kick against rivals Manchester City winning the Premier League Goal of the 20 Seasons award.[9]'
+                extendedBio: 'Wayne grade Rooney (/ˈruːni/; born 24 October 1985) is an English professional footballer who plays for and captains both Manchester United and the England national team. He has played much of his career as a forward, and he has also been used in various midfield roles. He is the highest goal scorer for Manchester United. <br><br> Aged nine, Rooney joined the youth team of Everton, for whom he made his professional debut in 2002 at the age of 16. He spent two seasons at the Merseyside club, before moving to Manchester United for £25.6 million in the 2004 summer transfer window. Since then, with Rooney in the team, United have won the Premier League five times, the UEFA Champions League once, the FIFA Club World Cup once, the FA Community Shield four times, the Football League Cup thrice and the FA Cup once. In September 2013, Rooney scored his 200th goal for Manchester United.[3] He is currently on 250 goals in all competitions which makes him the club\'s top goalscorer of all time. His 195 Premier League goals make him the competition\'s second top scorer of all time, behind Alan Shearer. Rooney holds the record for most goals for one club in the Premier League, with 180 for Manchester United. <br><br> Rooney made his senior international debut in February 2003 aged 17, becoming the youngest player to represent England (a record since broken by Theo Walcott) and he is England\'s youngest ever goalscorer.[4] He played at UEFA Euro 2004 and scored four goals, briefly becoming the youngest goalscorer in the history of the European Championship. Rooney has since featured at the 2006, 2010 and 2014 World Cups and is widely regarded as his country\'s best player.[5][6][7][8] He has won the England Player of the Year award four times, in 2008, 2009, 2014 and 2015. With 53 goals in 118 international caps, Rooney is England\'s all-time record goalscorer and second most-capped player, behind Peter Shilton. Along with David Beckham, Rooney is the most red carded player for England, having been sent off twice. <br><br> In 2009–10, Rooney was awarded the PFA Players\' Player of the Year and the FWA Footballer of the Year. He has won the Premier League Player of the Month award five times, a record only bettered by Steven Gerrard. He came fifth in the vote for the 2011 FIFA Ballon d\'Or and was named in the FIFPro World 11 for 2011. Rooney has won the Goal of the Season award by the BBC\'s Match of the Day poll on three occasions, with his bicycle kick against rivals Manchester City winning the Premier League Goal of the 20 Seasons award.[9]'
             },
             {
                 firstName: 'Paul',
