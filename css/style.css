@@ -9,3 +9,49 @@
 .bottom-buffer {
     margin-bottom: 30px;
 }
+
+.answer {
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 1px solid #c9302c;
+}
+
+.answer:hover {
+    cursor: pointer;
+}
+
+.image-answer {
+    cursor: pointer;
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.image-answer img{
+    width: 100%;
+    height: auto;
+}
+
+.bg-danger {
+    background: #c9302c;
+    color: white;
+}
+
+.image-selected {
+    border: 3px solid #c9302c;
+}
+
+.bg-success {
+    background: #5ea640;
+    color :white;
+}
+
+.image-answer.bg-success {
+    border: 3px solid #5ea640;
+}
+
+.image-answer.bg-danger {
+    border: 3px solid #c9302c;
+}
