@@ -7,13 +7,16 @@
 
     <!-- EXTERNAL CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon"" href="favicon.ico">
 </head>
 <body>
 
     <div class="container">
-        <div class="page-header">
-            <h1>Manchester United Facts Quiz</h1>
+        <div class="page-header text-center">
+            <img class="img-responsive logo" src="http://pngimg.com/uploads/manchester_united/manchester_united_PNG21.png">
+            <h1 class="center">Manchester United Facts Quiz</h1>
             <h3>
                 Learn all about the current Manchester United Players before you decide to take on the
                 <strong>Manchester United Quiz</strong>
@@ -40,7 +43,7 @@
                                 <p><strong>Birth Place:</strong> {{player.birthplace}}</p>
                                 <p><strong>Position:</strong> {{player.position}}</p>
                                 <p><strong>Bio :</strong> <small>{{player.bio}}</small></p>
-                                <button class="pull-right btn btn-primary" data-toggle="modal" data-target="#player-info" ng-click="list.changeActivePlayer(player)">Learn More</button>
+                                <button class="pull-right btn btn-danger" data-toggle="modal" data-target="#player-info" ng-click="list.changeActivePlayer(player)">Learn More</button>
                             </div>
                         </div>
                     </div>
